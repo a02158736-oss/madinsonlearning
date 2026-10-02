@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>10 prompts IA qui font gagner du temps | MADINSON LEARNING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#f4f8ff; --card:#ffffff; --ink:#0b2257; --muted:#4a5b82; --line:#d5e2f7;
+  --blue:#0070f0; --yellow:#ffc400; --code:#eaf2ff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#08142e; --card:#0f1f45; --ink:#eaf1ff; --muted:#9fb3dc; --line:#223566; --blue:#4da3ff; --code:#132a58;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#08142e; --card:#0f1f45; --ink:#eaf1ff; --muted:#9fb3dc; --line:#223566; --blue:#4da3ff; --code:#132a58;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;line-height:1.6}
+main{max-width:760px;margin:0 auto;padding:40px 20px 64px}
+.brand{font-weight:700;font-size:15px;letter-spacing:.02em;color:var(--blue)}
+h1{font-size:clamp(28px,6vw,42px);line-height:1.15;margin:12px 0 14px}
+.lead{color:var(--muted);font-size:17px;max-width:60ch;margin:0 0 28px}
+.how{border-left:5px solid var(--yellow);background:var(--card);padding:14px 18px;border-radius:0 10px 10px 0;margin-bottom:32px;font-size:15px}
+.how b{display:block;margin-bottom:4px}
+.how ul{margin:6px 0 0;padding-left:20px;color:var(--muted)}
+article{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 20px 18px;margin:0 0 18px}
+article h2{font-size:18px;margin:0 0 4px}
+article p.when{margin:0 0 12px;color:var(--muted);font-size:14px}
+pre{margin:0;white-space:pre-wrap;word-wrap:break-word;background:var(--code);padding:14px 16px;border-radius:8px;font:14px/1.6 'Poppins',system-ui,sans-serif;color:var(--ink)}
+button{margin-top:12px;font:500 14px 'Poppins',system-ui,sans-serif;background:var(--blue);color:#fff;border:0;border-radius:8px;padding:9px 16px;cursor:pointer}
+button:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+button.done{background:#12945a}
+.rules{margin-top:36px}
+.rules h2{font-size:22px}
+.rules li{margin-bottom:8px}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <div class="brand">MADINSON LEARNING</div>
+  <h1>10 prompts IA qui font gagner du temps</h1>
+  <p class="lead">Des modèles prêts à copier dans l'assistant IA de ton choix. Remplace les passages entre crochets par ton cas réel et envoie.</p>
+
+  <div class="how">
+    <b>Comment l'utiliser</b>
+    <ul>
+      <li>Clique sur « Copier le prompt », puis colle-le dans ton assistant IA.</li>
+      <li>Remplace chaque [crochet] par tes informations.</li>
+      <li>Relis toujours le résultat avant de l'utiliser.</li>
+    </ul>
+  </div>
+
+  <section id="list"></section>
+
+  <section class="rules">
+    <h2>Trois règles pour de meilleurs résultats</h2>
+    <ol>
+      <li>Donne du contexte : qui tu es, pour qui, et dans quel but.</li>
+      <li>Précise le format voulu : longueur, ton, liste ou paragraphes.</li>
+      <li>Corrige la réponse : demande « plus court », « plus simple » ou « avec un exemple ».</li>
+    </ol>
+    <p>Ne colle jamais de mots de passe, de données bancaires ou d'informations confidentielles dans un assistant IA.</p>
+  </section>
+
+  <footer>Retrouve les démonstrations en vidéo sur la chaîne YouTube MADINSON LEARNING.</footer>
+</main>
+
+<script>
+var P=[
+["Résumer un long document","Quand tu as un PDF ou un article à comprendre vite.",
+"Résume le texte ci-dessous en 5 points clés, puis ajoute une phrase « à retenir ». Utilise un langage simple.\n\nTexte : [colle ton texte ici]"],
+["Écrire un e-mail professionnel","Pour une demande, une relance ou une réponse délicate.",
+"Rédige un e-mail professionnel, poli et court (moins de 120 mots) pour [objectif]. Destinataire : [qui]. Contexte : [détails]. Termine par une demande claire et une date si utile."],
+["Adapter un CV à une offre","Pour postuler avec un CV ciblé.",
+"Voici mon CV : [colle ton CV]. Voici l'offre d'emploi : [colle l'offre]. Propose 5 modifications concrètes pour que mon CV corresponde mieux à l'offre, sans inventer d'expérience que je n'ai pas."],
+["Organiser ma semaine","Pour transformer une liste en planning réaliste.",
+"Voici mes tâches : [liste]. Mes contraintes : [horaires, obligations]. Crée un planning de la semaine, jour par jour, avec les tâches importantes le matin et des pauses réalistes."],
+["Expliquer simplement","Pour comprendre un sujet difficile.",
+"Explique-moi [sujet] comme si j'avais 12 ans. Donne un exemple de la vie quotidienne, puis 3 questions pour vérifier que j'ai compris."],
+["Trouver des idées de contenu","Pour alimenter une chaîne, un blog ou des réseaux sociaux.",
+"Je crée du contenu sur [thème] pour [public]. Propose 15 idées de sujets, classées par difficulté, avec pour chacune un titre accrocheur et l'angle utile pour le public."],
+["Corriger et améliorer un texte","Pour une version plus claire et sans fautes.",
+"Corrige l'orthographe et la grammaire du texte suivant, puis propose une version plus claire et plus directe. Garde mon style et indique les changements importants.\n\nTexte : [colle ton texte]"],
+["Transformer des notes en compte rendu","Après une réunion ou un cours.",
+"Voici mes notes brutes : [colle tes notes]. Organise-les en compte rendu avec : contexte, décisions prises, actions à faire (qui, quoi, quand)."],
+["Comparer deux options","Pour décider avec des critères clairs.",
+"Compare [option A] et [option B] pour [mon objectif]. Présente un tableau avec les avantages, les inconvénients, le coût et les risques. Dis clairement ce que tu ne peux pas savoir sans plus d'informations."],
+["Vérifier une information","Pour éviter de partager une erreur.",
+"Voici une affirmation : [affirmation]. Dis-moi ce qui est établi, ce qui est incertain et ce qui est faux. Indique quelles sources fiables je dois consulter pour confirmer."]
+];
+var L=document.getElementById('list');
+P.forEach(function(p,i){
+  var a=document.createElement('article');
+  var h=document.createElement('h2');h.textContent=(i+1)+'. '+p[0];
+  var w=document.createElement('p');w.className='when';w.textContent=p[1];
+  var pre=document.createElement('pre');pre.textContent=p[2];
+  var b=document.createElement('button');b.type='button';b.textContent='Copier le prompt';
+  b.onclick=function(){
+    function ok(){b.textContent='Copié';b.className='done';setTimeout(function(){b.textContent='Copier le prompt';b.className='';},1800);}
+    try{navigator.clipboard.writeText(p[2]).then(ok,function(){sel();});}catch(e){sel();}
+    function sel(){try{var r=document.createRange();r.selectNodeContents(pre);var s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');ok();}catch(e){b.textContent='Sélectionne et copie à la main';}}
+  };
+  a.appendChild(h);a.appendChild(w);a.appendChild(pre);a.appendChild(b);L.appendChild(a);
+});
+</script>
+</body>
+</html>
