@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MADINSON LEARNING — Apprendre. Évoluer. Réussir.</title>
+<meta name="description" content="Formations en intelligence artificielle, productivité, gestion de projet et compétences numériques. Accompagnement digital depuis Cotonou, Bénin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F8F9;--surface:#fff;--ink:#10263A;--muted:#52667A;--line:#D9E2E8;--brand:#0A63D6;--brand-ink:#fff;--gold:#FFC20E;--deep:#0A2150;--deep-ink:#EAF2F5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1822;--surface:#12212E;--ink:#EAF2F5;--muted:#9DB1C0;--line:#243847;--brand:#4DA3FF;--brand-ink:#04162E;--deep:#071638}}
+:root[data-theme="dark"]{--bg:#0C1822;--surface:#12212E;--ink:#EAF2F5;--muted:#9DB1C0;--line:#243847;--brand:#4DA3FF;--brand-ink:#04162E;--deep:#071638}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0 0 .5em;letter-spacing:-.02em}
+h1{font-size:clamp(2.4rem,8vw,4.6rem);font-weight:800}
+h2{font-size:clamp(1.7rem,4.5vw,2.6rem);font-weight:800}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:0 0 1em;max-width:62ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:10px;font:600 1rem "Source Sans 3",sans-serif;text-decoration:none;border:2px solid var(--brand);background:var(--brand);color:var(--brand-ink);cursor:pointer}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.sm{min-height:42px;padding:0 16px;font-size:.95rem}
+.btn:hover{filter:brightness(1.08)}
+/* nav */
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:800 1.25rem "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.02em}
+.logo{display:inline-flex;align-items:center;gap:10px}.logo img{width:40px;height:40px;border-radius:9px;background:#fff;padding:2px}
+nav ul{list-style:none;margin:0;padding:0;display:none;gap:18px;align-items:center}
+nav a{text-decoration:none;font-weight:600;font-size:.95rem}
+nav a:hover{color:var(--brand)}
+.burger{width:48px;height:48px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font-size:1.4rem;cursor:pointer}
+nav.open ul{display:flex;flex-direction:column;align-items:stretch;position:absolute;left:0;right:0;top:calc(64px + env(safe-area-inset-top,0px));background:var(--bg);padding:12px 20px 20px;border-bottom:1px solid var(--line);gap:0}
+nav.open li a{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+nav.open li:last-child a{border:0;margin-top:12px;text-align:center}
+@media(min-width:960px){.burger{display:none}nav ul{display:flex}}
+/* hero */
+.hero{padding:56px 0 72px}
+.hero .grid{display:grid;gap:40px}
+.lead{font-size:1.2rem;color:var(--muted)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.path{background:var(--deep);color:var(--deep-ink);border-radius:18px;padding:26px;align-self:center}
+.path h3{color:var(--gold);font-size:1rem;margin-bottom:14px}
+.path ol{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.path li{padding:14px 0 14px 28px;border-left:2px solid #2d4a5e;position:relative;opacity:0;animation:in .5s forwards}
+.path li::before{content:"";position:absolute;left:-7px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--gold)}
+.path li:nth-child(2){animation-delay:.15s}.path li:nth-child(3){animation-delay:.3s}.path li:nth-child(4){animation-delay:.45s}
+.path strong{display:block;font:600 1.1rem "Bricolage Grotesque",sans-serif}
+.path span{font-size:.92rem;color:#A9C0CE}
+@keyframes in{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+@media(min-width:900px){.hero .grid{grid-template-columns:1.25fr 1fr}}
+/* trust */
+.trust{background:var(--surface);border-block:1px solid var(--line);padding:36px 0}
+.trust ul{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.trust li strong{display:block;font:600 1.05rem "Bricolage Grotesque",sans-serif}
+@media(min-width:760px){.trust ul{grid-template-columns:repeat(4,1fr)}}
+/* cards */
+.cards{display:grid;gap:18px;margin-top:28px}
+@media(min-width:700px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.cards.three{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column}
+.card.course{border-top:4px solid var(--brand)}
+.card ul{margin:0 0 14px;padding-left:18px;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 14px;font-size:.88rem;color:var(--muted)}
+.meta span{border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+.card .actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px}
+.todo{color:var(--brand);font-weight:600}
+.svc{border-left:4px solid var(--gold);border-radius:6px;padding:4px 0 4px 16px}
+.svc p{margin:0;color:var(--muted)}
+.svc-grid{display:grid;gap:20px;margin-top:28px}
+@media(min-width:700px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+/* dark band */
+.band{background:var(--deep);color:var(--deep-ink)}
+.band .muted,.band p{color:#B4C8D5}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.chip{border:1px solid #365468;border-radius:99px;padding:6px 14px;font-size:.92rem;color:var(--deep-ink)}
+.two{display:grid;gap:28px}
+@media(min-width:900px){.two{grid-template-columns:1fr 1fr;align-items:start}}
+.soon{border:1px dashed #4a677b;border-radius:12px;padding:18px;color:#B4C8D5}
+/* forms */
+form{display:grid;gap:14px}
+label{font-weight:600;font-size:.95rem;display:block;margin-bottom:4px}
+input,textarea,select{width:100%;min-height:48px;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit}
+textarea{min-height:130px;resize:vertical}
+.row{display:grid;gap:14px}
+@media(min-width:600px){.row{grid-template-columns:1fr 1fr}}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;color:var(--muted)}
+.chk input{width:22px;min-height:22px;margin-top:3px;flex:none}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+.msg{padding:12px 14px;border-radius:10px;font-weight:600;display:none}
+.msg.ok{display:block;background:#DCEBFF;color:#0A2E66}
+.msg.err{display:block;background:#FBE4E1;color:#7A1F14}
+.nl{display:flex;flex-direction:column;gap:12px;max-width:520px}
+@media(min-width:600px){.nl .f{display:flex;gap:10px}}
+.final{text-align:center;background:var(--brand);color:var(--brand-ink)}
+.final p{margin-inline:auto}
+.final .btn{background:var(--brand-ink);color:var(--brand);border-color:var(--brand-ink)}
+footer{background:var(--deep);color:var(--deep-ink);padding:48px 0 32px;font-size:.95rem}
+footer .cols{display:grid;gap:28px}
+@media(min-width:760px){footer .cols{grid-template-columns:1.3fr 1fr 1fr 1fr}}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+footer a{text-decoration:none;color:#B4C8D5}footer a:hover{color:#fff}
+footer h3{font-size:1rem;color:var(--gold)}
+.copy{border-top:1px solid #2d4a5e;margin-top:28px;padding-top:18px;color:#8FA8B8}
+dialog{width:min(720px,92vw);max-height:86vh;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);padding:0}
+dialog::backdrop{background:rgba(8,16,24,.6)}
+dialog .in{padding:24px;overflow:auto;max-height:86vh}
+dialog h2{font-size:1.5rem}dialog h3{margin-top:1.2em;font-size:1.05rem}
+.lk{background:none;border:0;padding:0;color:#B4C8D5;font:inherit;cursor:pointer;text-align:left;text-decoration:underline}.lk:hover{color:#fff}
+.xc{float:right;min-height:40px}
+.logo span{display:flex;flex-direction:column;line-height:1}.logo small{font:600 .62rem "Source Sans 3",sans-serif;letter-spacing:.34em;color:var(--brand);margin-top:3px}
+footer .logo small{color:#7DB8FF}
+.hero,.final{position:relative;overflow:hidden;isolation:isolate}
+.bgfx{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.bgfx i{position:absolute;display:block;animation:drift 18s ease-in-out infinite alternate}
+.bgfx .c{border-radius:50%;background:var(--brand);opacity:.1}
+.bgfx .t{background:var(--gold);opacity:.4;clip-path:polygon(0 50%,100% 0,100% 100%)}
+.final .bgfx .c{background:#fff;opacity:.1}
+.bgfx .c1{width:340px;height:340px;left:-120px;top:-130px}
+.bgfx .c2{width:260px;height:260px;right:-70px;top:-60px;animation-duration:23s;animation-delay:-6s}
+.bgfx .c3{width:300px;height:300px;left:8%;bottom:-170px;animation-duration:26s;animation-delay:-3s}
+.bgfx .c4{width:380px;height:380px;right:-130px;bottom:-190px;animation-duration:21s;animation-delay:-9s}
+.bgfx .t1{width:70px;height:92px;left:3%;top:46%;animation-duration:14s;animation-name:spin}
+.bgfx .t2{width:92px;height:116px;right:2%;top:36%;transform:scaleX(-1);animation-duration:17s;animation-delay:-5s;animation-name:spin}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,30px) scale(1.12)}}
+@keyframes spin{from{translate:0 0;rotate:-8deg}to{translate:18px -24px;rotate:10deg}}
+.slides{position:absolute;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+.slides i{position:absolute;inset:-4%;background-size:cover;background-position:center right;opacity:0;animation:fade 28s infinite}
+.slides i:nth-child(2){animation-delay:7s}.slides i:nth-child(3){animation-delay:14s}.slides i:nth-child(4){animation-delay:21s}
+.slides::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 8%,transparent 75%);opacity:.9}
+@keyframes fade{0%{opacity:0;transform:scale(1)}6%{opacity:.75}25%{opacity:.75}31%{opacity:0}100%{opacity:0;transform:scale(1.08)}}
+:root:not([data-theme="light"]) .slides i{filter:brightness(.55)}
+@media(prefers-color-scheme:light){:root:not([data-theme="dark"]) .slides i{filter:none}}
+.slides i:nth-child(1){background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1600 900%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%23EAF3FF%22/%3E%3Cstop offset=%221%22 stop-color=%22%23BFDDFF%22/%3E%3C/linearGradient%3E%3ClinearGradient id=%22b%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%230A63D6%22/%3E%3Cstop offset=%221%22 stop-color=%22%2300C8FF%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221600%22 height=%22900%22 fill=%22url(%23g)%22/%3E%3Crect x=%22860%22 y=%22190%22 width=%22600%22 height=%22380%22 rx=%2226%22 fill=%22%230A2150%22/%3E%3Crect x=%22884%22 y=%22214%22 width=%22552%22 height=%22332%22 rx=%2212%22 fill=%22%23fff%22/%3E%3Crect x=%22920%22 y=%22250%22 width=%22300%22 height=%2246%22 rx=%2223%22 fill=%22url(%23b)%22/%3E%3Crect x=%221100%22 y=%22320%22 width=%22300%22 height=%2246%22 rx=%2223%22 fill=%22%23DCEBFF%22/%3E%3Crect x=%22920%22 y=%22390%22 width=%22360%22 height=%2246%22 rx=%2223%22 fill=%22url(%23b)%22/%3E%3Crect x=%221100%22 y=%22460%22 width=%22240%22 height=%2246%22 rx=%2223%22 fill=%22%23DCEBFF%22/%3E%3Cpath d=%22M800 590h720l-60 50H860z%22 fill=%22%230A2150%22/%3E%3Cpath d=%22M1330 130l14 38 38 14-38 14-14 38-14-38-38-14 38-14z%22 fill=%22%23FFC20E%22/%3E%3Ccircle cx=%22780%22 cy=%22260%22 r=%2270%22 fill=%22%230A63D6%22 opacity=%22.2%22/%3E%3C/svg%3E")}
+.slides i:nth-child(2){background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1600 900%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%23EAF3FF%22/%3E%3Cstop offset=%221%22 stop-color=%22%23BFDDFF%22/%3E%3C/linearGradient%3E%3ClinearGradient id=%22b%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%230A63D6%22/%3E%3Cstop offset=%221%22 stop-color=%22%2300C8FF%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221600%22 height=%22900%22 fill=%22url(%23g)%22/%3E%3Crect x=%22780%22 y=%22170%22 width=%22720%22 height=%22500%22 rx=%2226%22 fill=%22%23fff%22/%3E%3Crect x=%22780%22 y=%22170%22 width=%22720%22 height=%2270%22 rx=%2226%22 fill=%22%230A2150%22/%3E%3Crect x=%22830%22 y=%22280%22 width=%22260%22 height=%2238%22 rx=%2219%22 fill=%22url(%23b)%22/%3E%3Crect x=%22990%22 y=%22350%22 width=%22300%22 height=%2238%22 rx=%2219%22 fill=%22%23FFC20E%22/%3E%3Crect x=%22900%22 y=%22420%22 width=%22220%22 height=%2238%22 rx=%2219%22 fill=%22url(%23b)%22/%3E%3Crect x=%221160%22 y=%22490%22 width=%22280%22 height=%2238%22 rx=%2219%22 fill=%22%230A63D6%22/%3E%3Crect x=%221060%22 y=%22560%22 width=%22200%22 height=%2238%22 rx=%2219%22 fill=%22%23FFC20E%22/%3E%3Cpath d=%22M1000 240v380M1160 240v380M1320 240v380%22 stroke=%22%23D9E2E8%22 stroke-width=%223%22/%3E%3Ccircle cx=%22720%22 cy=%22700%22 r=%2280%22 fill=%22%23FFC20E%22 opacity=%22.35%22/%3E%3C/svg%3E")}
+.slides i:nth-child(3){background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1600 900%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%23EAF3FF%22/%3E%3Cstop offset=%221%22 stop-color=%22%23BFDDFF%22/%3E%3C/linearGradient%3E%3ClinearGradient id=%22b%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%230A63D6%22/%3E%3Cstop offset=%221%22 stop-color=%22%2300C8FF%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221600%22 height=%22900%22 fill=%22url(%23g)%22/%3E%3Crect x=%22820%22 y=%22170%22 width=%22440%22 height=%22520%22 rx=%2226%22 fill=%22%23fff%22/%3E%3Cg fill=%22none%22 stroke=%22%230A63D6%22 stroke-width=%2210%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M870 270l24 24 44-52%22/%3E%3Cpath d=%22M870 400l24 24 44-52%22/%3E%3C/g%3E%3Crect x=%22880%22 y=%22540%22 width=%2240%22 height=%2240%22 rx=%2210%22 fill=%22none%22 stroke=%22%230A63D6%22 stroke-width=%228%22/%3E%3Cg fill=%22%23BFDDFF%22%3E%3Crect x=%22970%22 y=%22258%22 width=%22240%22 height=%2224%22 rx=%2212%22/%3E%3Crect x=%22970%22 y=%22388%22 width=%22200%22 height=%2224%22 rx=%2212%22/%3E%3Crect x=%22970%22 y=%22548%22 width=%22220%22 height=%2224%22 rx=%2212%22/%3E%3C/g%3E%3Ccircle cx=%221400%22 cy=%22400%22 r=%22150%22 fill=%22%230A2150%22/%3E%3Ccircle cx=%221400%22 cy=%22400%22 r=%22124%22 fill=%22%23fff%22/%3E%3Cpath d=%22M1400 400V316M1400 400l60 36%22 stroke=%22%230A2150%22 stroke-width=%2214%22 stroke-linecap=%22round%22/%3E%3Ccircle cx=%221400%22 cy=%22400%22 r=%2214%22 fill=%22%23FFC20E%22/%3E%3C/svg%3E")}
+.slides i:nth-child(4){background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1600 900%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%23EAF3FF%22/%3E%3Cstop offset=%221%22 stop-color=%22%23BFDDFF%22/%3E%3C/linearGradient%3E%3ClinearGradient id=%22b%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%230A63D6%22/%3E%3Cstop offset=%221%22 stop-color=%22%2300C8FF%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221600%22 height=%22900%22 fill=%22url(%23g)%22/%3E%3Crect x=%221000%22 y=%22110%22 width=%22320%22 height=%22640%22 rx=%2246%22 fill=%22%230A2150%22/%3E%3Crect x=%221020%22 y=%22140%22 width=%22280%22 height=%22580%22 rx=%2230%22 fill=%22url(%23b)%22/%3E%3Ccircle cx=%221160%22 cy=%22400%22 r=%2278%22 fill=%22%23fff%22/%3E%3Cpath d=%22M1138 362l66 38-66 38z%22 fill=%22%23FFC20E%22/%3E%3Crect x=%221060%22 y=%22560%22 width=%22200%22 height=%2222%22 rx=%2211%22 fill=%22%23fff%22 opacity=%22.85%22/%3E%3Crect x=%221060%22 y=%22604%22 width=%22140%22 height=%2222%22 rx=%2211%22 fill=%22%23fff%22 opacity=%22.5%22/%3E%3Cg fill=%22%230A63D6%22 opacity=%22.25%22%3E%3Crect x=%22760%22 y=%22520%22 width=%2260%22 height=%22140%22 rx=%2212%22/%3E%3Crect x=%22850%22 y=%22440%22 width=%2260%22 height=%22220%22 rx=%2212%22/%3E%3Crect x=%22940%22 y=%22360%22 width=%2260%22 height=%22300%22 rx=%2212%22/%3E%3C/g%3E%3Ccircle cx=%221440%22 cy=%22250%22 r=%2260%22 fill=%22%23FFC20E%22 opacity=%22.5%22/%3E%3C/svg%3E")}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}.path li{opacity:1}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap bar">
+  <a class="logo" href="#accueil" aria-label="MADINSON, accueil"><img src="data:image/webp;base64,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" alt="" width="40" height="40"><span>MADINSON<small>LEARNING</small></span></a>
+  <nav id="nav" aria-label="Navigation principale">
+   <ul>
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#formations">Formations</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#ia-tech">IA &amp; Tech</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#youtube">YouTube</a></li>
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a class="btn sm" href="#formations">Se former</a></li>
+   </ul>
+  </nav>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">☰</button>
+ </div>
+</header>
+
+<main id="accueil">
+<section class="hero">
+ <div class="slides" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+ <div class="bgfx" aria-hidden="true"><i class="c c1"></i><i class="c c2"></i><i class="c c3"></i><i class="c c4"></i><i class="t t1"></i><i class="t t2"></i></div>
+ <div class="wrap grid">
+  <div>
+   <h1>Apprendre. Évoluer. Réussir.</h1>
+   <p class="lead">Développez vos compétences numériques, maîtrisez les nouveaux outils et transformez vos connaissances en opportunités.</p>
+   <div class="cta-row">
+    <a class="btn" href="#formations">Découvrir nos formations</a>
+    <a class="btn alt" href="#services">Découvrir nos services</a>
+   </div>
+  </div>
+  <aside class="path" aria-label="Parcours de compétences">
+   <h3>Votre parcours MADINSON</h3>
+   <ol>
+    <li><strong>Intelligence artificielle</strong><span>Comprendre et utiliser les outils IA</span></li>
+    <li><strong>Productivité</strong><span>Organiser son travail, gagner du temps</span></li>
+    <li><strong>Gestion de projet</strong><span>Planifier et suivre avec MS Project</span></li>
+    <li><strong>Compétences numériques</strong><span>Créer, communiquer, se démarquer</span></li>
+   </ol>
+  </aside>
+ </div>
+</section>
+
+<div class="trust">
+ <div class="wrap"><ul>
+  <li><strong>Formations</strong><span class="muted">Pratiques, orientées métier</span></li>
+  <li><strong>Ressources</strong><span class="muted">Guides et modèles à télécharger</span></li>
+  <li><strong>Accompagnement</strong><span class="muted">Un suivi personnalisé</span></li>
+  <li><strong>Contenu gratuit</strong><span class="muted">Astuces IA chaque semaine</span></li>
+ </ul></div>
+</div>
+
+<section id="formations">
+ <div class="wrap">
+  <h2>Nos formations</h2>
+  <p class="muted">Choisissez votre domaine, puis inscrivez-vous ou posez vos questions sur WhatsApp.</p>
+  <div class="cards" id="courses"></div>
+ </div>
+</section>
+
+<section id="services" style="background:var(--surface)">
+ <div class="wrap">
+  <h2>Nos services</h2>
+  <p class="muted">Un problème précis ? Nous proposons une solution claire, avec un processus simple.</p>
+  <div class="svc-grid" id="svcs"></div>
+  <div class="cta-row"><a class="btn wa" data-msg="Bonjour MADINSON, je souhaite un devis pour un service." href="#contact">Demander un devis</a></div>
+ </div>
+</section>
+
+<section id="ia-tech" class="band">
+ <div class="wrap two">
+  <div>
+   <h2>L'espace éditorial MADINSON</h2>
+   <p>Actualité IA, astuces, tutoriels, outils et conseils numériques. Restez à la pointe de la technologie.</p>
+   <div class="chips" aria-label="Catégories">
+    <span class="chip">Actualité IA</span><span class="chip">Astuces IA</span><span class="chip">Tutoriels</span><span class="chip">Outils IA</span><span class="chip">Nouvelles technologies</span><span class="chip">Productivité</span><span class="chip">Conseils numériques</span>
+   </div>
+  </div>
+  <div class="soon" id="blog">
+   <h3>Blog et ressources</h3>
+   <p>Les premiers articles arrivent bientôt : [À compléter]. Inscrivez-vous à la newsletter pour être prévenu à la publication.</p>
+   <a class="btn sm" href="#newsletter">Être prévenu</a>
+  </div>
+ </div>
+</section>
+
+<section id="youtube">
+ <div class="wrap two">
+  <div>
+   <h2>La chaîne YouTube MADINSON</h2>
+   <p>Apprendre l'IA, les outils numériques et les nouvelles technologies de manière simple, pratique et professionnelle.</p>
+   <div class="cta-row">
+    <a class="btn" id="yt" href="#youtube" rel="noopener">S'abonner sur YouTube</a>
+    <a class="btn alt" href="#formations">Passer à la formation</a>
+   </div>
+   <p class="muted" style="margin-top:14px">Nouvelles vidéos chaque semaine.</p>
+  </div>
+  <div><img src="data:image/webp;base64,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" alt="MADINSON Learning : l'IA utile, expliquée simplement" width="960" height="540" loading="lazy" style="width:100%;height:auto;border-radius:14px;border:1px solid var(--line);margin-bottom:16px"><div class="card"><h3>Dernières vidéos</h3><p class="muted">Les vidéos s'afficheront ici une fois la chaîne reliée au site. <span class="todo">[À compléter]</span></p></div></div>
+ </div>
+</section>
+
+<!-- Témoignages : section masquée tant qu'aucun témoignage réel n'existe. -->
+
+<section id="apropos" style="background:var(--surface)">
+ <div class="wrap two">
+  <div>
+   <h2>À propos</h2>
+   <p>MADINSON LEARNING est une plateforme de formation et d'accompagnement digital basée au Bénin. Notre mission : rendre l'IA et les outils numériques accessibles et utiles à chacun.</p>
+   <p class="muted">Histoire et parcours du fondateur : <span class="todo">[À compléter]</span></p>
+  </div>
+  <div class="cards" style="margin:0">
+   <div class="card"><h3>Valeurs</h3><p class="muted" style="margin:0">Apprentissage, innovation, professionnalisme, accessibilité, progression, résultats.</p></div>
+   <div class="card"><h3>Ambition</h3><p class="muted" style="margin:0">Devenir une référence francophone de la formation numérique et de l'IA.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="newsletter">
+ <div class="wrap">
+  <h2>Recevez les meilleures astuces IA et numériques directement dans votre boîte mail.</h2>
+  <form class="nl" id="nlf" novalidate>
+   <div class="f">
+    <div style="flex:1"><label for="nle">Votre adresse email</label><input id="nle" type="email" autocomplete="email" required></div>
+    <button class="btn" type="submit" style="align-self:end">Je m'inscris</button>
+   </div>
+   <label class="chk"><input type="checkbox" id="nlc" required> <span>J'accepte de recevoir la newsletter MADINSON. Je peux me désinscrire à tout moment.</span></label>
+   <div class="msg" id="nlm" role="status"></div>
+  </form>
+  <p style="margin-top:20px"><a class="btn alt" href="https://bit.ly/4eeb9ZV" target="_blank" rel="noopener">Télécharger la ressource gratuite</a></p>
+ </div>
+</section>
+
+<section id="contact" style="background:var(--surface)">
+ <div class="wrap two">
+  <div>
+   <h2>Parler à MADINSON</h2>
+   <p>Une question sur une formation ou un service ? Écrivez-nous, nous répondons rapidement.</p>
+   <p><a class="btn wa" data-msg="Bonjour MADINSON, je souhaite des informations." href="#contact">Demander des informations sur WhatsApp</a></p>
+   <p class="muted">Email : <a href="mailto:madinsonmycoach@gmail.com">madinsonmycoach@gmail.com</a><br>Facebook : <a href="https://facebook.com/share/1D7NfHpvDs" target="_blank" rel="noopener">Page MADINSON</a><br>YouTube : <a href="https://www.youtube.com/@MADINSONLEARNING" target="_blank" rel="noopener">@MADINSONLEARNING</a><br>Horaires : lundi au samedi, 8h00 – 18h00</p>
+  </div>
+  <form id="cf" novalidate>
+   <div class="row">
+    <div><label for="cn">Nom</label><input id="cn" autocomplete="family-name" required></div>
+    <div><label for="cp">Prénom</label><input id="cp" autocomplete="given-name" required></div>
+   </div>
+   <div class="row">
+    <div><label for="ce">Email</label><input id="ce" type="email" autocomplete="email" required></div>
+    <div><label for="ct">Téléphone</label><input id="ct" type="tel" autocomplete="tel"></div>
+   </div>
+   <div><label for="cs">Sujet</label>
+    <select id="cs"><option>Inscription à une formation</option><option>Demande de service</option><option>Devis</option><option>Autre</option></select></div>
+   <div><label for="cm">Message</label><textarea id="cm" required></textarea></div>
+   <div class="hp" aria-hidden="true"><label for="cw">Ne pas remplir</label><input id="cw" tabindex="-1" autocomplete="off"></div>
+   <button class="btn" type="submit">Envoyer le message</button>
+   <div class="msg" id="cmsg" role="status"></div>
+  </form>
+ </div>
+</section>
+
+<section class="final">
+ <div class="bgfx" aria-hidden="true"><i class="c c1"></i><i class="c c2"></i><i class="c c3"></i><i class="c c4"></i><i class="t t1"></i><i class="t t2"></i></div>
+ <div class="wrap">
+  <h2>Votre prochaine compétence peut changer votre prochaine opportunité.</h2>
+  <a class="btn" href="#formations">Commencer maintenant</a>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="cols">
+   <div><a class="logo" href="#accueil" style="color:#fff;margin-bottom:10px"><img src="data:image/webp;base64,UklGRkoHAABXRUJQVlA4ID4HAABQKQCdASqgAKAAPlEmkUUjoiIUCpTYOAUEsTdur+K636Bq03bvxz9kCuv4P7r/lPwuRs/UH5P/l/2v8t+4D5hn6L/2v+i/jl3l/MB/GP75+4vupegn0AP611IPoAeXJ7Gn7V/tz8Af6x//rrAP//1h/GOXYZ6b++cGbBTT6zMPG/9WewL+qxLw3GHK1Wx2qrjlGkIkxCtQfeYtbzHPnvx3AojN4yg4aFMi0xRZlDZfjHgS7EG7b8l8ybE/FwkUlwrTR/z8u2OYtV5HUsq/kJOJ7wpTOaN3e88hdux7url/VRJH9HRMRoYJJiTqJpwbEXoDOtkY5s9J+dqzV2xXbRFfhap/9ZKc+vPrGoCx1GG3fATvzVzbTfe9X7KOUJcRMqnYPmHGSfx6CN2laoQ3oTU784Vr/eSApjfAS1CjXhVgn4ldxaOBFbEeSW9WjYR2qrjlFgAA/v050AAElrzbVbO56Aq3nM6leB+9vMy2zh9F6C1m/g0inrlH6bzEew06bogIeaxInsaexiJlOg1+d1Y06+pbYhjgbgHrUcMdvEd1RGJ3HtjYNmrIYj4APiynui/7FCoR/RuDm6CP7HKr0x4i7fyKmqBIXidbtP/4zkjR8koJ+U58XNc1BSevtSSNjDvPnN/Ep+8zcZra6l85wbCpuTz438Xm5KYvQ99QSk2Df02BMLxMOy7Uu+VmxxNFvFT53vuN1nfYKS7lVGo8Wy9Sr+/4vQiDxx0vElOH8nXfx/wARj+64rpHCsxgTR/zMWIVOGY7ZTmqDvjno5noOzPwaRTBCuuv59dWo4zFbr3C6sYnO1AhV76dddqPKNUOmH4kRg8v0lND49LLfs0LC/vYZo/giaFwoMALXe4GBNLAP4V7wjtaClu28TwIC7Vz3FkLTnTNp2dH/N+9/dflWKa0g6JyicaYtEwYT11O70rQr2L0RMMdA/FbC/0MzHDLx/RDxiixvFhCH+RTX7l5BGQZsACUgFIJPYNh/am802wnm2crDYoi/sLq5SkeYv3CqxG5Q7uzrx8Wb0QfBzRB5OWMNZ16dCRsDGrRFxjTof55Dyxa9uzlHWtOPlAtcAuqZEy1QWBgQdFZEhZzCksNflNP2EpSdYjmNguInSviJhvYty5E6iap1xt1v8fnrF/DPxGWP6qBByddc3swVTnZQqHXmwSNJkzDAofbiWS38rdfxqmFSppmnWNWPWjpMT+Kajo7/mCrSF+c9dxai3qzPmug5EPay+X3CTwhr1CYxRgw8ZBeuLtjDRk2yfvL8ySFW1ebfV/opj769r/Oniz8MF89HdZj8/2X/6iCv/YDLijWF+FtTJrl059KMcAt/8cEGbriRwdgsllUVb4jX5MRd3AuGkBx+hOlpo4WW98VBOdCvsDdy5v1BqJCNAr5BAAaOKttQBRluW0JUC79pTLQpe5IS3/xRj99//ggfQ+df5tmGrlmniQMWPRQ+UDRFXNOUDfvRUpfKZemocUmc4bJUfWCQb7ngZfj59IQlxOZSzPaiJitfSty4TVxkawQs8QKFNDkHyqOe9t+oBpBkREdDaoW3WDu9hwKTySfZoVtFRmUIQS6MCahBycSu4tjd5jXIIHVeG4DDW0T/faeG9sEut7bdquf7V/VwdjZ7pn4oXg/v4/JHQyxrx15eJrWKF49oP6tzxL+Clrr6zSNoyrMoXikt6zR+stNmB4XfCKB2y59Vmn/Db+tDX1XhwGxw3F8yPXSyBNDpJmGqBpvvji9TKGlwRQmMZsQBBuMiEZJKY0/xw95H56z1GPsYquMNZk7PN7sACkhzV7Eworbi3JW7Apu76w7KnFBwVScRwD7pJ7mkeaFc9KldSSd2uTqX8pS44wv+dHcuwn5/BP+M80uyHWyGKGEe8ruiLhIWv+SHJgfi8J/6nc6nZiW3r9e/1/r6HjJHlunz1GhSXj4Uv2p0LbB8Xxjb5bcADgh+umgMSpkbntmIvJ436wGGLPS0NDSkp2Aei36pigG3wnP5tjm7VjaYuHJTKDneMDFb8ViCF7+edRqsaEnLaHfk3hQFNvde+aOF55A9m91eO6L5PJN2/DtxnDDx89X9vX8smQ4Kdgt2ozfI/6ULtg2lnLuT4ycexzzikaefABU6/+mz0DY3BlqLFvUzyVG7aewBbiG0KNFFuEpTmnFyHq+Oikmpl13csw0M7ecodeTKI8k3WrGwepf8SX+3d/PsciAAr4vZPf6anmXYRwy6+F7DiSZAxb9mLfFXy0Jx1BSaTbE1JTV3L9qnpK8o2Khh6n0MsihLzHAiZaYGPlGSu4BTWFjck/8y+mcTVMN1eZzkgBf+zMVBvDdF2oo3n9VqwqYKkeJClcXLtgk4+zmKc7EZ75rQ+kfwbAGGvvsBW957KB7x6f8+qblwvup9sboGHFPR9W02bfJnG/nfu3luQXaZxsSQjSzBJozXrFt6Glr33I43I1IAMtCKfvbUMrS7gAAAAAAAAA=" alt="" width="40" height="40"><span>MADINSON<small>LEARNING</small></span></a><p>L'IA utile, expliquée simplement.<br>Apprendre. Évoluer. Réussir.</p></div>
+   <div><h3>Explorer</h3><ul>
+    <li><a href="#formations">Formations</a></li><li><a href="#services">Services</a></li><li><a href="#ia-tech">IA &amp; Tech</a></li><li><a href="#blog">Blog</a></li><li><a href="#youtube">YouTube</a></li><li><a href="#apropos">À propos</a></li><li><a href="#contact">Contact</a></li></ul></div>
+   <div><h3>Suivez-nous</h3><ul><li><a href="https://www.youtube.com/@MADINSONLEARNING" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://facebook.com/share/1D7NfHpvDs" target="_blank" rel="noopener">Facebook</a></li><li><a href="mailto:madinsonmycoach@gmail.com">madinsonmycoach@gmail.com</a></li></ul></div>
+   <div><h3>Informations</h3><ul>
+    <li><a href="#newsletter">Newsletter</a></li><li><button class="lk" data-d="d-ml">Mentions légales</button></li><li><button class="lk" data-d="d-pc">Politique de confidentialité</button></li><li><button class="lk" data-d="d-cg">Conditions générales</button></li></ul></div>
+  </div>
+  <p class="copy">© 2026 MADINSON LEARNING. Tous droits réservés.</p>
+ </div>
+</footer>
+
+
+<dialog id="d-ml" aria-label="Mentions légales"><div class="in"><button class="btn sm alt xc" data-x>Fermer</button>
+<h2>Mentions légales</h2>
+<p class="muted">Modèle à faire valider par un juriste avant publication.</p>
+<h3>Éditeur du site</h3>
+<p>MADINSON LEARNING<br>Forme juridique : <span class="todo">[À compléter]</span><br>Adresse : Cotonou, Bénin <span class="todo">[adresse complète à compléter]</span><br>Immatriculation (RCCM / IFU) : <span class="todo">[À compléter]</span><br>Responsable de publication : <span class="todo">[À compléter]</span><br>Email : madinsonmycoach@gmail.com<br>WhatsApp : +229 01 50 87 16 07</p>
+<h3>Hébergement</h3>
+<p>Hébergeur : <span class="todo">[À compléter]</span></p>
+<h3>Propriété intellectuelle</h3>
+<p>Les textes, logos, visuels et contenus du site sont la propriété de MADINSON LEARNING, sauf mention contraire. Toute reproduction sans autorisation écrite est interdite.</p>
+<h3>Responsabilité</h3>
+<p>Les informations du site sont fournies à titre indicatif et peuvent évoluer. MADINSON LEARNING ne peut être tenue responsable des contenus de sites tiers vers lesquels le site renvoie (YouTube, Facebook, WhatsApp, etc.).</p>
+</div></dialog>
+
+<dialog id="d-pc" aria-label="Politique de confidentialité"><div class="in"><button class="btn sm alt xc" data-x>Fermer</button>
+<h2>Politique de confidentialité</h2>
+<p class="muted">Modèle à faire valider par un juriste (droit béninois de la protection des données) avant publication.</p>
+<h3>Données collectées</h3>
+<p>Nous collectons uniquement les données que vous saisissez : nom, prénom, email, téléphone et message (formulaire de contact) ; adresse email (newsletter). Ce site n'utilise pas de cookies publicitaires.</p>
+<h3>Finalités</h3>
+<p>Répondre à vos demandes, gérer vos inscriptions aux formations et services, et, avec votre consentement explicite, vous envoyer la newsletter. Aucun email promotionnel n'est envoyé sans votre accord.</p>
+<h3>Conservation et partage</h3>
+<p>Vos données sont conservées le temps nécessaire à ces finalités : <span class="todo">[durée à compléter]</span>. Elles ne sont ni vendues ni cédées. Elles peuvent être traitées par des prestataires techniques (hébergement, envoi d'emails) : <span class="todo">[à compléter]</span>.</p>
+<h3>Services tiers</h3>
+<p>Le site charge des polices depuis Google Fonts, ce qui transmet votre adresse IP à Google. Les boutons WhatsApp, YouTube et Facebook vous redirigent vers ces services, soumis à leurs propres politiques.</p>
+<h3>Vos droits</h3>
+<p>Vous pouvez demander l'accès, la rectification ou la suppression de vos données, et vous désinscrire de la newsletter à tout moment, en écrivant à madinsonmycoach@gmail.com.</p>
+</div></dialog>
+
+<dialog id="d-cg" aria-label="Conditions générales"><div class="in"><button class="btn sm alt xc" data-x>Fermer</button>
+<h2>Conditions générales</h2>
+<p class="muted">Modèle à faire valider par un juriste avant publication.</p>
+<h3>Objet</h3>
+<p>Ces conditions encadrent l'inscription et la participation aux formations et services de MADINSON LEARNING.</p>
+<h3>Inscription et paiement</h3>
+<p>L'inscription est confirmée après réception du paiement. Les prix sont indiqués en euros sur le site. Modes de paiement acceptés : <span class="todo">[À compléter]</span>.</p>
+<h3>Formations en ligne</h3>
+<p>Les formations se déroulent en ligne aux dates annoncées. Le participant doit disposer d'une connexion internet et d'un appareil adapté. MADINSON LEARNING peut reporter une session en cas de force majeure ou de participants insuffisants et en informe les inscrits.</p>
+<h3>Annulation et remboursement</h3>
+<p><span class="todo">[Conditions à compléter : délai, remboursement, report]</span></p>
+<h3>Propriété intellectuelle</h3>
+<p>Les supports de formation sont réservés à un usage personnel. Leur diffusion ou revente sans autorisation est interdite.</p>
+<h3>Résultats</h3>
+<p>Les formations fournissent des compétences et un accompagnement, sans garantie de résultat professionnel ou financier précis.</p>
+<h3>Droit applicable</h3>
+<p>Ces conditions sont régies par le droit béninois. Tout litige relève des juridictions compétentes de Cotonou, après tentative de règlement amiable.</p>
+</div></dialog>
+<script>
+// ===== Configuration (à compléter) =====
+// endpoint : collez ici votre URL Formspree, ex. "https://formspree.io/f/xxxxxxxx"
+const CFG={wa:"2290150871607",youtube:"https://www.youtube.com/@MADINSONLEARNING",endpoint:"https://formspree.io/f/myekzkjn"}; // wa: numéro international sans + (ex: 229XXXXXXXX)
+
+const courses=[
+ {t:"Intelligence artificielle",lv:"Débutant à intermédiaire",d:"120 heures",p:"120 €",dt:"12 novembre 2026",items:["IA générative et ChatGPT","Outils IA au quotidien","Automatisation","Création de contenu avec l'IA"]},
+ {t:"Productivité",lv:"Tous niveaux",d:"72 heures",p:"80 €",dt:"10 octobre 2026",items:["Outils numériques","Organisation et gestion du temps","Automatisation des tâches"]},
+ {t:"Gestion de projet",lv:"Intermédiaire",d:"120 heures",p:"160 €",dt:"Chaque mois",items:["MS Project","Planification et suivi","Gestion des ressources"]},
+ {t:"Compétences numériques",lv:"Débutant",d:"48 heures",p:"80 €",dt:"À communiquer",items:["Outils bureautiques","Création numérique","Réseaux sociaux","Compétences professionnelles"]}
+];
+const services=[
+ ["Audit TikTok","Comprendre pourquoi votre compte ne grandit pas."],
+ ["Audit réseaux sociaux","Un diagnostic clair de votre présence."],
+ ["Stratégie de contenu","Un plan éditorial adapté à votre cible."],
+ ["Création de contenu","Des publications professionnelles régulières."],
+ ["Accompagnement IA","Intégrer l'IA dans votre activité."],
+ ["Formation personnalisée","Un programme sur mesure, à votre rythme."],
+ ["Accompagnement digital","Un suivi pour passer à l'action."],
+ ["Conseil numérique","Choisir les bons outils."],
+ ["Optimisation de présence en ligne","Être trouvé et inspirer confiance."]
+];
+const $=s=>document.querySelector(s);
+function waLink(msg){return CFG.wa?`https://wa.me/${CFG.wa}?text=${encodeURIComponent(msg)}`:null}
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+$("#courses").innerHTML=courses.map(c=>`<article class="card course">
+ <h3>${esc(c.t)}</h3>
+ <div class="meta"><span>${esc(c.lv)}</span><span>Durée : ${esc(c.d)}</span><span>Format : En ligne</span></div>
+ <ul>${c.items.map(i=>`<li>${esc(i)}</li>`).join("")}</ul>
+ <p class="muted" style="margin-bottom:14px">Prix : <strong>${esc(c.p)}</strong> · Prochaine date : <strong>${esc(c.dt)}</strong></p>
+ <div class="actions">
+  <a class="btn sm wa" href="#contact" data-msg="Bonjour MADINSON, je souhaite m'inscrire à la formation « ${esc(c.t)} ».">S'inscrire</a>
+  <a class="btn sm alt wa" href="#contact" data-msg="Bonjour MADINSON, je souhaite des informations sur la formation « ${esc(c.t)} ».">Poser une question</a>
+ </div></article>`).join("");
+
+$("#svcs").innerHTML=services.map(s=>`<div class="svc"><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p></div>`).join("");
+
+// Liens WhatsApp : message prérempli selon la carte
+document.addEventListener("click",e=>{
+ const a=e.target.closest("a.wa");if(!a)return;
+ const l=waLink(a.dataset.msg);
+ if(l){e.preventDefault();window.open(l,"_blank","noopener")}
+});
+if(CFG.youtube)$("#yt").href=CFG.youtube,$("#yt").target="_blank";
+
+// Fenêtres légales
+document.querySelectorAll(".lk").forEach(b=>b.addEventListener("click",()=>document.getElementById(b.dataset.d).showModal()));
+document.querySelectorAll("[data-x]").forEach(b=>b.addEventListener("click",()=>b.closest("dialog").close()));
+document.querySelectorAll("dialog").forEach(d=>d.addEventListener("click",e=>{if(e.target===d)d.close()}));
+// Menu mobile
+const nav=$("#nav"),bg=$("#burger");
+bg.addEventListener("click",()=>{const o=nav.classList.toggle("open");bg.setAttribute("aria-expanded",o)});
+nav.addEventListener("click",e=>{if(e.target.closest("a")){nav.classList.remove("open");bg.setAttribute("aria-expanded",false)}});
+
+// Formulaires
+const okMail=v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+function show(el,t,ok){el.className="msg "+(ok?"ok":"err");el.textContent=t}
+async function send(type,data,el){
+ if(!CFG.endpoint){show(el,"Formulaire validé. L'envoi sera actif une fois le service d'envoi connecté [À compléter].",true);return}
+ try{const r=await fetch(CFG.endpoint,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({type,_subject:type==="newsletter"?"Nouvelle inscription newsletter":"Nouveau message du site",...data})});
+  if(!r.ok)throw 0;show(el,type==="newsletter"?"Merci, votre inscription est enregistrée.":"Merci, votre message est envoyé. Nous vous répondons rapidement.",true)}
+ catch{show(el,"L'envoi a échoué. Réessayez dans un instant.",false)}
+}
+$("#nlf").addEventListener("submit",e=>{e.preventDefault();const m=$("#nlm"),v=$("#nle").value.trim();
+ if(!okMail(v))return show(m,"Saisissez une adresse email valide.",false);
+ if(!$("#nlc").checked)return show(m,"Cochez la case de consentement pour vous inscrire.",false);
+ send("newsletter",{email:v,consent:true},m)});
+$("#cf").addEventListener("submit",e=>{e.preventDefault();const m=$("#cmsg");
+ if($("#cw").value)return; // anti-spam (honeypot)
+ const d={nom:$("#cn").value.trim(),prenom:$("#cp").value.trim(),email:$("#ce").value.trim(),tel:$("#ct").value.trim(),sujet:$("#cs").value,message:$("#cm").value.trim()};
+ if(!d.nom||!d.prenom||!d.message)return show(m,"Renseignez votre nom, prénom et message.",false);
+ if(!okMail(d.email))return show(m,"Saisissez une adresse email valide.",false);
+ send("contact",d,m)});
+</script>
+</body>
+</html>
